@@ -1,0 +1,177 @@
+:root {
+  --jeopardy-blue: #06284f;
+  --jeopardy-deep: #001f5b;
+  --jeopardy-gold: #ffd64d;
+  --cell-blue: #0b3d91;
+}
+
+.jeopardy-board-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--jeopardy-deep);
+  color: var(--jeopardy-gold);
+}
+
+.jeopardy-board-table thead th {
+  padding: 12px 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--jeopardy-gold);
+  background: linear-gradient(
+    180deg,
+    var(--cell-blue) 0%,
+    var(--jeopardy-deep) 100%
+  );
+  border: 3px solid rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.category-header {
+  position: relative;
+  min-width: 160px; /* avoid very narrow headers */
+  padding: 8px 12px;
+}
+
+.category-title {
+  display: block;
+  padding-right: 100px; /* leave ample space for edit button */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cat-edit {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+}
+
+.cat-edit button {
+  padding: 4px 8px;
+  font-size: 0.78rem;
+}
+
+.jeopardy-board-table tbody td {
+  padding: 0;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #093a7a 0%, #0b4aa1 100%);
+  color: var(--jeopardy-gold);
+  vertical-align: middle;
+  text-align: center;
+  min-height: 100px; /* use min-height so cells can shrink/expand with content */
+}
+
+.jeopardy-board-table tbody td .cell-value {
+  font-size: 28px;
+  font-weight: 800;
+  padding: 12px 6px;
+}
+
+.jeopardy-board-table tbody td .cell-edit {
+  margin-top: 8px;
+}
+
+.jeopardy-board-table tbody td.claimed {
+  background: #bfbfbf !important;
+  color: #222 !important;
+}
+
+/* daily double indicator */
+.jeopardy-board-table tbody td.daily-double {
+  box-shadow: 0 0 0 3px rgba(255, 214, 77, 0.18) inset,
+    0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.jeopardy-board-table tbody td.daily-double .cell-value {
+  position: relative;
+}
+.jeopardy-board-table tbody td.daily-double .cell-value::after {
+  content: "DD";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--jeopardy-gold);
+  color: var(--jeopardy-deep);
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+  .jeopardy-board-table thead th {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .category-title {
+    padding-right: 48px;
+  }
+  .jeopardy-board-table tbody td {
+    min-height: 72px;
+  }
+  .jeopardy-board-table tbody td .cell-value {
+    font-size: 20px;
+  }
+}
+
+/* Overflow menu styles */
+.cat-overflow {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.cat-menu {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  background: #fff;
+  color: #111;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 30;
+  overflow: hidden;
+}
+.cat-menu-item {
+  display: block;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: #06284f; /* Added color for readability */
+  text-decoration: none; /* Added text decoration for readability */
+}
+.cat-menu-item:hover {
+  background: #f5f5f5;
+}
+
+/* hide inline .cat-edit on very small screens and rely on overflow */
+@media (max-width: 520px) {
+  .cat-edit {
+    display: none;
+  }
+  .cat-overflow {
+    display: block;
+  }
+}
+
+.edit-link {
+  color: var(--jeopardy-gold);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.overflow-trigger {
+  color: var(--jeopardy-gold);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px;
+}
+
+/* small visual niceties */
+.jeopardy-board-table thead th,
+.jeopardy-board-table tbody td {
+  box-shadow: inset 0 -6px 16px rgba(0, 0, 0, 0.15);
+}

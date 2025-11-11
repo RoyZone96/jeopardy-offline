@@ -1,0 +1,59 @@
+.page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+        background: linear-gradient(180deg,#0b3d91 0%, #06284f 100%);
+        color: #fff;
+        box-sizing: border-box;
+    }
+    .hero {
+        max-width: 780px;
+        width: 100%;
+        text-align: center;
+        background: rgba(255,255,255,0.03);
+        border-radius: 12px;
+        padding: 2.5rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    }
+    .title {
+        font-size: 3.25rem;
+        margin: 0 0 0.25rem 0;
+        letter-spacing: 1;
+    }
+    .lead {
+        margin: 0 0 1.25rem 0;
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.9);
+    }
+    .actions {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+    button {
+        padding: 0.6rem 1.1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        min-width: 140px;
+    }
+    .primary {
+        background: #ffd64d;
+        color: #0b2b3a;
+        font-weight: 600;
+    }
+    .secondary {
+        background: transparent;
+        color: #ffd64d;
+        border: 1px solid rgba(255,214,77,0.25);
+    }
+    .small {
+        margin-top: 8px;
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.75);
+    }

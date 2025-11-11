@@ -1,0 +1,118 @@
+/* Scoreboard component styles */
+.scoreboard-root {
+  padding: 8px;
+}
+
+.buttons {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.player-limit-note {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.scoreboard {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+/* legacy selector kept but visuals are defined on .player-card */
+.scoreboard-entry {
+  margin: 0;
+}
+
+.player-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 70%);
+  color: white;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+}
+
+.player-name {
+  min-width: 140px;
+  font-size: 1.05rem;
+}
+
+.player-score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+.player-remove .remove-player {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.points-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.points-label {
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+}
+
+.points-control select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+.toggle-mode {
+  min-width: 60px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.apply-button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  border: none;
+}
+
+@media (max-width: 640px) {
+  .player-name {
+    min-width: 120px;
+  }
+  .player-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .player-header {
+    justify-content: space-between;
+  }
+  .player-score {
+    margin: 8px 0;
+  }
+}

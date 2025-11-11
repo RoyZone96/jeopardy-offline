@@ -1,0 +1,54 @@
+/* Styles for MakeBoard route */
+.makeboard-root {
+  padding: 1rem;
+}
+
+.makeboard-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.makeboard-label {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.makeboard-input {
+  margin-left: 0.5rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.makeboard-actions {
+  margin-left: auto;
+}
+
+.makeboard-save {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-weight: 700;
+}
+
+.makeboard-preview {
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .makeboard-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .makeboard-actions {
+    margin-left: 0;
+  }
+}
