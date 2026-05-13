@@ -9,6 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "overrides": {
+    "react-popper":{
+      "react": "19.0.0"
+    }
+  },
   "dependencies": {
     "bootstrap": "^5.3.8",
     "react": "^19.1.1",
